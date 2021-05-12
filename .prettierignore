@@ -1,2 +1,7 @@
-bin/*
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.html
 package.json
+dist/*
+public/*

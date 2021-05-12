@@ -1,6 +1,17 @@
-## 创建项目模板脚手架
+# React-Lite 项目启动模板
 
-### 分支说明
+## 快速开始
 
-- main：脚手架
-- [others]：项目模板
+```bash
+# 安装
+yarn install
+
+# 开始
+yarn start
+
+# 构建
+yarn build
+
+# 提交日志
+yarn commit
+```

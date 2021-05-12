@@ -1,36 +1,16 @@
-import { execSync } from 'child_process';
-import clone from 'git-clone';
-import ora from 'ora';
-import chalk from 'chalk';
-
-export const checkCommandInstall = (command: string) => {
-  try {
-    execSync(command, { stdio: 'ignore' });
-    return true;
-  } catch (e) {
-    return false;
+export class StorageUtil {
+  static get(key: string) {
+    const value = window.localStorage.getItem(key);
+    return value && JSON.parse(value);
   }
-};
-
-export const checkYarnInstall = checkCommandInstall.bind(
-  null,
-  'yarn --version',
-);
-
-export const downloadRepos = (
-  repos: string,
-  targetPath: string,
-  projectName: string,
-) => {
-  const spinner = ora('Downloading...').start();
-  clone(repos, targetPath, () => {
-    spinner.stop();
-    console.log(`
-✅ Boilerplate download successful
-
-${chalk.blue('> cd ' + projectName)}
-
-Enjoy yourself!
-    `);
-  });
-};
+  static getOrigin(key: string) {
+    return window.localStorage.getItem(key);
+  }
+  static set(key: string, value: any): boolean {
+    if (value === undefined) {
+      return false;
+    }
+    window.localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  }
+}

@@ -1,21 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "bin",
-    "types": ["node"],
-    "module": "commonjs",
+    "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "node",
-    "strict": true,
-    "strictNullChecks": false,
-    "target": "ES6",
-    "declaration": true,
-    "lib": ["ES5", "ES6", "ES7", "ES2018.Promise"],
-    "preserveConstEnums": true,
-    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "noImplicitAny": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "exclude": ["test"],
-  "include": ["src/**/*.ts"]
+  "include": ["src", ".eslintrc.js", "config-overrides"],
+  "exclude": ["node_modules"]
 }
