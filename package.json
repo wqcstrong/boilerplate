@@ -1,5 +1,5 @@
 {
-  "name": "@blucas/create-project",
+  "name": "@blucass/create-project",
   "version": "0.0.1",
   "description": "Create start project boilerplate",
   "bin": "bin/index.js",
