@@ -2,7 +2,7 @@
   "name": "@blucass/create-project",
   "version": "0.2.0",
   "description": "Create start project boilerplate",
-  "bin": "bin/index.js",
+  "bin": "./dist/index.js",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
