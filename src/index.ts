@@ -5,11 +5,6 @@ import path from 'path';
 import { checkYarnInstall, downloadRepos } from './utils';
 import { Boilerplate_Repos } from './repos';
 
-interface CommondOptions {
-  skipInit?: boolean;
-  preset?: [];
-}
-
 export default async function create() {
   const yarnInstalled = checkYarnInstall();
 
@@ -32,8 +27,8 @@ export default async function create() {
   } while (isExisted === true);
 
   const projectType = await getProjectType();
-  type ReposType = keyof typeof Boilerplate_Repos;
-  const repoUrl = Boilerplate_Repos[projectType as ReposType];
+  type BoilerplateType = keyof typeof Boilerplate_Repos;
+  const repoUrl = Boilerplate_Repos[projectType as BoilerplateType];
 
   if (!!repoUrl === false) return;
   downloadRepos(repoUrl, projectPath, projectName);
@@ -44,11 +39,11 @@ async function getProjectName() {
     {
       type: 'text',
       name: 'projectName',
-      message: '项目名称',
+      message: '项目名称'
     },
     {
-      onCancel: () => true,
-    },
+      onCancel: () => true
+    }
   );
   if (projectName.trim() === '') {
     process.exit();
@@ -63,11 +58,11 @@ async function getProjectType() {
     message: '选择项目模板',
     choices: [
       {
-        title: 'React Lite',
-        value: 'react-lite',
-        description: '基于 create-react-app，支持自定义配置',
-      },
-    ],
+        title: 'React Lite for PC',
+        value: 'react-lite-pc',
+        description: '基于 create-react-app，支持自定义配置'
+      }
+    ]
   });
   return projectType;
 }

@@ -1,7 +1,9 @@
 import { execSync } from 'child_process';
-import clone from 'git-clone';
+import fs from 'fs';
 import ora from 'ora';
 import chalk from 'chalk';
+import clone from './git-clone';
+import path from 'path';
 
 export const checkCommandInstall = (command: string) => {
   try {
@@ -14,23 +16,43 @@ export const checkCommandInstall = (command: string) => {
 
 export const checkYarnInstall = checkCommandInstall.bind(
   null,
-  'yarn --version',
+  'yarn --version'
 );
 
+function reinitGit(localPath: string) {
+  process.chdir(localPath);
+  fs.rmSync(path.resolve('./.git'), {
+    recursive: true
+  });
+  execSync('git init');
+}
+
 export const downloadRepos = (
-  repos: string,
-  targetPath: string,
-  projectName: string,
+  repoObj: I.Repo,
+  localPath: string,
+  projectName: string
 ) => {
   const spinner = ora('Downloading...').start();
-  clone(repos, targetPath, () => {
-    spinner.stop();
-    console.log(`
+  const { url, branch = '' } = repoObj;
+  const params = {
+    url,
+    branch,
+    localPath
+  };
+  const successTemplate = `
 ✅ Boilerplate download successful
 
 ${chalk.blue('> cd ' + projectName)}
 
 Enjoy yourself!
-    `);
+`;
+  clone(params, (err) => {
+    if (err === null) {
+      reinitGit(localPath);
+      spinner.stop();
+      console.log(successTemplate);
+    } else {
+      throw err;
+    }
   });
 };
