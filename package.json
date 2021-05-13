@@ -1,6 +1,6 @@
 {
   "name": "@blucass/react-lite-pc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PC 端react-lite版本启动框架，基于create-react-app CLI",
   "license": "MIT",
   "dependencies": {
