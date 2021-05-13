@@ -1,6 +1,6 @@
 {
-  "short_name": "货",
-  "name": "货拉拉",
+  "short_name": "Boilerplate",
+  "name": "React Boilerplate",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "app-logo.png",
+      "src": "logo192.png",
       "type": "image/png",
-      "sizes": "108x99"
+      "sizes": "192x192"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ff9900",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }
