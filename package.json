@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "node ./bin/index.js",
+    "test": "node dist/index.js",
     "commit": "git-cz",
     "release:patch": "standard-version --release-as patch",
     "release:minor": "standard-version --release-as minor",

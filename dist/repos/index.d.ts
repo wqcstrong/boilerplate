@@ -3,4 +3,8 @@ export declare const Boilerplate_Repos: {
     url: string;
     branch: string;
   };
+  'react-vite-pc': {
+    url: string;
+    branch: string;
+  };
 };

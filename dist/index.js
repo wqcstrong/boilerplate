@@ -96,9 +96,14 @@ function getProjectType() {
       message: '选择项目模板',
       choices: [
         {
-          title: 'React Lite for PC',
+          title: 'React(cra) for PC',
           value: 'react-lite-pc',
           description: '基于 create-react-app，支持自定义配置'
+        },
+        {
+          title: 'React(vite) for PC',
+          value: 'react-vite-pc',
+          description: '基于 Vite 封装'
         }
       ]
     });
