@@ -23,7 +23,6 @@ export default function Menu1() {
       <Paragraph>
         当前已经内置的配置有：
         <ul>
-          <li>集成发布系统 Van；</li>
           <li>Antd 按需加载；通过 dayjs 替换 moment 优化 Antd 包体积；</li>
           <li>支持使用 less；</li>
           <li>支持引用 svg；</li>
