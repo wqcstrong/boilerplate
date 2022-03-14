@@ -2,3 +2,5 @@ node_modules
 .cache
 .DS_Store
 __MACOSX
+
+yarn-error.log
