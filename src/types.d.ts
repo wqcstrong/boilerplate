@@ -1,8 +1,4 @@
-declare module 'git-clone';
+declare module '*.less';
+declare module '*.png';
 
-declare namespace I {
-  export interface Repo {
-    url: string;
-    branch?: string;
-  }
-}
+type Env = 'dev' | 'stg' | 'pre' | 'prod';

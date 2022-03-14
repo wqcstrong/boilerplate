@@ -1,24 +1,21 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "types": ["node"],
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
+    "isolatedModules": true,
     "moduleResolution": "node",
-    "strict": true,
-    "strictNullChecks": false,
-    "target": "ES6",
-    "declaration": true,
-    "lib": ["ES5", "ES6", "ES7", "ES2018.Promise"],
-    "preserveConstEnums": true,
-    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noImplicitAny": true,
-    "baseUrl": ".",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "strict": true,
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["src/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": false
   },
-  "exclude": ["test"],
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*"]
 }
