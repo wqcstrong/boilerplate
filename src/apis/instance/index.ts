@@ -2,19 +2,10 @@ import { extend } from 'umi-request';
 
 import errorHandler from './error-handler';
 
-const apiHostMap = {
-  development: 'http://development/api',
-  test: 'http://test/api',
-  production: 'http://production/api',
-};
-const env = process.env.Node_ENV as keyof typeof apiHostMap;
-
-const apiHost = apiHostMap[env];
-
 const request = extend({
   timeout: 10000,
   credentials: 'include',
-  prefix: process.env.NODE_ENV === 'development' ? apiHost : apiHost,
+  prefix: import.meta.env.VITE_API_PREFIX,
   getResponse: false,
   errorHandler,
 });
