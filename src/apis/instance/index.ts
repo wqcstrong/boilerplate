@@ -2,14 +2,14 @@ import { extend } from 'umi-request';
 
 import errorHandler from './error-handler';
 
-const vanEnv = (document.documentElement.dataset.vanEnv || 'dev') as Env;
 const apiHostMap = {
-  dev: 'http://devtool.huolala.work/mock/1837/api',
-  stg: 'http://devtool.huolala.work/mock/1837/api',
-  pre: 'http://devtool.huolala.work/mock/1837/api',
-  prod: 'http://devtool.huolala.work/mock/1837/api',
+  development: 'http://development/api',
+  test: 'http://test/api',
+  production: 'http://production/api',
 };
-const apiHost = apiHostMap[vanEnv];
+const env = process.env.Node_ENV as keyof typeof apiHostMap;
+
+const apiHost = apiHostMap[env];
 
 const request = extend({
   timeout: 10000,
