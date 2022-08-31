@@ -1,21 +1,11 @@
+import React from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { useRoutes } from 'react-router-dom';
-import {
-  AreaChartOutlined,
-  ChromeOutlined,
-  ForkOutlined,
-} from '@ant-design/icons';
 
-import { Page404, To404 } from '@/404';
-import Home from '@/pages/home';
-import DefaultMenu from '@/pages/default-menu';
-import HiddenMenu from '@/pages/hidden-menu';
-import WrapperMenu from '@/pages/wrapper-menu';
-import InnerMenu from '@/pages/wrapper-menu/detail';
-import React from 'react';
-import { LayoutContent } from '@/layouts/content';
-
-const LazyLoadMenu = React.lazy(() => import('@/pages/lazy-menu'));
+import { Page404, To404 } from '@/pages/404';
+import { Home } from '@/pages/Home';
+import Layouts from '@/layouts';
+import { DefaultIndex } from '@/pages/DefaultIndex';
 
 export interface RouteInfo {
   icon?: any;
@@ -29,46 +19,35 @@ export type SiderRoute = RouteInfo & RouteObject;
 
 export const siderRoutes: SiderRoute[] = [
   {
-    icon: AreaChartOutlined,
-    name: '快速上手',
-    path: '/quick-start',
-    element: <DefaultMenu />,
+    name: '首页',
+    path: '/home',
+    element: <Home />,
   },
   {
-    icon: ForkOutlined,
-    name: '懒加载路由',
-    path: '/lazy-load',
-    element: <LazyLoadMenu />,
+    name: '待办',
+    path: '/todos',
+    element: <Home />,
   },
   {
-    name: '隐藏菜单',
-    path: '/hidden-menu',
-    hidden: true,
-    element: <HiddenMenu />,
+    name: '消息',
+    path: '/message',
+    element: <Home />,
   },
   {
-    icon: ChromeOutlined,
-    name: '嵌套菜单',
-    path: '/nest-menu',
-    element: <WrapperMenu />,
-    children: [
-      {
-        name: '内部菜单',
-        path: '/nest-menu/detail-1',
-        element: <InnerMenu />,
-      },
-    ],
+    name: '个人中心',
+    path: '/user',
+    element: <Home />,
   },
 ];
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <LayoutContent />,
+    element: <Layouts />,
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <DefaultIndex />,
       },
       ...siderRoutes,
       {
@@ -83,7 +62,7 @@ const routes: RouteObject[] = [
   },
 ];
 
-export default function App() {
+export default function RouteConfig() {
   const routeContent = useRoutes(routes);
 
   return routeContent;
