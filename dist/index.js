@@ -104,6 +104,11 @@ function getProjectType() {
           title: 'React(vite) for PC',
           value: 'react-vite-pc',
           description: '基于 Vite 封装'
+        },
+        {
+          title: 'React(vite) for Mobile',
+          value: 'react-vite-mobile',
+          description: '基于 Vite 封装'
         }
       ]
     });

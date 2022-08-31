@@ -9,5 +9,9 @@ exports.Boilerplate_Repos = {
   'react-vite-pc': {
     url: 'git@github.com:wqcstrong/boilerplate.git',
     branch: 'react-vite-pc'
+  },
+  'react-vite-mobile': {
+    url: 'git@github.com:wqcstrong/boilerplate.git',
+    branch: 'react-vite-mobile'
   }
 };

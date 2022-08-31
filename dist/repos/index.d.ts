@@ -7,4 +7,8 @@ export declare const Boilerplate_Repos: {
     url: string;
     branch: string;
   };
+  'react-vite-mobile': {
+    url: string;
+    branch: string;
+  };
 };
