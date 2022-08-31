@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/wqcstrong/boilerplate/compare/v0.2.3...v0.4.0) (2022-08-31)
+
+### Features
+
+- 🎸 add vite config ([ba302b7](https://github.com/wqcstrong/boilerplate/commit/ba302b72af68d4017333be588dd47b8fc7c69530))
+
 ### [0.2.3](https://github.com/wqcstrong/boilerplate/compare/v0.2.2...v0.2.3) (2021-05-13)
 
 ### [0.2.2](https://github.com/wqcstrong/boilerplate/compare/v0.2.1...v0.2.2) (2021-05-13)
