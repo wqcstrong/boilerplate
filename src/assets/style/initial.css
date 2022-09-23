@@ -1,5 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  img {
+    width: 100%;
+  }
+  svg {
+    display: inline-block;
+  }
+}
+
+@layer components {
+  .color-primary {
+    @apply text-orange-500;
+  }
+  .bg-primary {
+    @apply bg-orange-500;
+  }
+  .text-secondary {
+    @apply text-gray-400;
+  }
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .flex-x-center {
+    @apply flex justify-center;
+  }
+  .flex-y-center {
+    @apply flex items-center;
+  }
+  .hot-area {
+    @apply active:opacity-80 transition;
+  }
+}
+
 :root:root {
-  --adm-color-primary: #1677ff;
+  --adm-color-primary: #f97316;
   --adm-color-success: #00b578;
   --adm-color-warning: #ff8f1f;
   --adm-color-danger: #ff3141;
