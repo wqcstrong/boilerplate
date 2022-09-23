@@ -10,7 +10,7 @@ function gitClone(params, callback) {
   args.push('--');
   args.push(url);
   args.push(localPath);
-  child_process_1.exec(args.join(' '), (err) => {
+  (0, child_process_1.exec)(args.join(' '), (err) => {
     callback && callback(err);
   });
 }

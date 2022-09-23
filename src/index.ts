@@ -66,12 +66,12 @@ async function getProjectType() {
       {
         title: 'React(vite) for PC',
         value: 'react-vite-pc',
-        description: '基于 Vite 封装'
+        description: '技术栈：Vite + React + antd + axios'
       },
       {
         title: 'React(vite) for Mobile',
         value: 'react-vite-mobile',
-        description: '基于 Vite 封装'
+        description: '技术栈: Vite + React + antd-mobile + TailwindCSS + axios'
       }
     ]
   });

@@ -46,7 +46,7 @@ const utils_1 = require('./utils');
 const repos_1 = require('./repos');
 function create() {
   return __awaiter(this, void 0, void 0, function* () {
-    const yarnInstalled = utils_1.checkYarnInstall();
+    const yarnInstalled = (0, utils_1.checkYarnInstall)();
     if (!yarnInstalled) {
       console.log('yarn 不存在');
       return;
@@ -66,13 +66,13 @@ function create() {
     const projectType = yield getProjectType();
     const repoUrl = repos_1.Boilerplate_Repos[projectType];
     if (!!repoUrl === false) return;
-    utils_1.downloadRepos(repoUrl, projectPath, projectName);
+    (0, utils_1.downloadRepos)(repoUrl, projectPath, projectName);
   });
 }
 exports.default = create;
 function getProjectName() {
   return __awaiter(this, void 0, void 0, function* () {
-    const { projectName = '' } = yield prompts_1.default(
+    const { projectName = '' } = yield (0, prompts_1.default)(
       {
         type: 'text',
         name: 'projectName',
@@ -90,7 +90,7 @@ function getProjectName() {
 }
 function getProjectType() {
   return __awaiter(this, void 0, void 0, function* () {
-    const { projectType } = yield prompts_1.default({
+    const { projectType } = yield (0, prompts_1.default)({
       type: 'select',
       name: 'projectType',
       message: '选择项目模板',
@@ -103,12 +103,13 @@ function getProjectType() {
         {
           title: 'React(vite) for PC',
           value: 'react-vite-pc',
-          description: '基于 Vite 封装'
+          description: '技术栈：Vite + React + antd + axios'
         },
         {
           title: 'React(vite) for Mobile',
           value: 'react-vite-mobile',
-          description: '基于 Vite 封装'
+          description:
+            '技术栈: Vite + React + antd-mobile + TailwindCSS + axios'
         }
       ]
     });
