@@ -20,6 +20,10 @@
     "type": "git",
     "url": "git@github.com:wqcstrong/boilerplate.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "homepage": "https://github.com/wqcstrong/boilerplate",
   "dependencies": {
     "chalk": "^4.1.1",

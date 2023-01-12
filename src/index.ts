@@ -59,17 +59,17 @@ async function getProjectType() {
     message: '选择项目模板',
     choices: [
       {
-        title: 'React(cra) for PC',
+        title: 'React(cra) B端 ',
         value: 'react-lite-pc',
         description: '基于 create-react-app，支持自定义配置'
       },
       {
-        title: 'React(vite) for PC',
+        title: 'React(vite) B端',
         value: 'react-vite-pc',
         description: '技术栈：Vite + React + antd + axios'
       },
       {
-        title: 'React(vite) for Mobile',
+        title: 'React(vite) C端',
         value: 'react-vite-mobile',
         description: '技术栈: Vite + React + antd-mobile + TailwindCSS + axios'
       }
