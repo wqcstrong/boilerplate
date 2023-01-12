@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.2](https://github.com/wqcstrong/boilerplate/compare/v0.2.3...v0.5.2) (2023-01-12)
+
+### Features
+
+- 🎸 更新各模板说明 ([27249c0](https://github.com/wqcstrong/boilerplate/commit/27249c01c3598377c8fa3bd49f2a940026e759b3))
+- 🎸 add vite config ([ba302b7](https://github.com/wqcstrong/boilerplate/commit/ba302b72af68d4017333be588dd47b8fc7c69530))
+- 🎸 intergate tailwindcss [react-vite-mobile] ([a93d775](https://github.com/wqcstrong/boilerplate/commit/a93d775c1e53098ed6c8034f55bf3e21edcc8cf1))
+
 ## [0.5.0](https://github.com/wqcstrong/boilerplate/compare/v0.4.0...v0.5.0) (2022-08-31)
 
 ## [0.4.0](https://github.com/wqcstrong/boilerplate/compare/v0.2.3...v0.4.0) (2022-08-31)
