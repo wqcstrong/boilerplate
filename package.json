@@ -1,6 +1,6 @@
 {
   "name": "@blucass/create-project",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Create start project boilerplate",
   "bin": "dist/index.js",
   "license": "MIT",
@@ -10,8 +10,12 @@
     "commit": "git-cz",
     "release:patch": "standard-version --release-as patch",
     "release:minor": "standard-version --release-as minor",
-    "release:major": "standard-version --release-as major"
+    "release:major": "standard-version --release-as major",
+    "prepublish": "yarn build"
   },
+  "files": [
+    "dist"
+  ],
   "author": {
     "name": "Blucas Wu",
     "email": "15555602203@163.com"
