@@ -61,7 +61,7 @@ async function getProjectType() {
       {
         title: 'React(cra) B端 ',
         value: 'react-lite-pc',
-        description: '基于 create-react-app，支持自定义配置'
+        description: '基于 cra，通过 react-app-rewired 自定义配置'
       },
       {
         title: 'React(vite) B端',
