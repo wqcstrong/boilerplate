@@ -1,6 +1,6 @@
 {
   "name": "@blucass/create-project",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Create start project boilerplate",
   "bin": "dist/index.js",
   "license": "MIT",

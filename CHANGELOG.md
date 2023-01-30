@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.4](https://github.com/wqcstrong/boilerplate/compare/v0.5.3...v0.5.4) (2023-01-30)
+
+### Bug Fixes
+
+- 🐛 修复脚本 `prepublish` -> `prepublishOnly` ([f54c5e0](https://github.com/wqcstrong/boilerplate/commit/f54c5e040156a11582e5dfbcf4b17bd4e17cc115))
+
 ### [0.5.3](https://github.com/wqcstrong/boilerplate/compare/v0.5.2...v0.5.3) (2023-01-12)
 
 ### [0.5.2](https://github.com/wqcstrong/boilerplate/compare/v0.2.3...v0.5.2) (2023-01-12)
