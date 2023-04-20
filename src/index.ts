@@ -59,6 +59,12 @@ async function getProjectType() {
     message: '选择项目模板',
     choices: [
       {
+        title: 'Vanilla(vite)',
+        value: 'vanilla-vite',
+        description: '基于 vite 构建'
+      },
+
+      {
         title: 'React(cra) B端 ',
         value: 'react-lite-pc',
         description: '基于 cra，通过 react-app-rewired 自定义配置'

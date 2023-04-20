@@ -1,14 +1,20 @@
+const repo = 'git@github.com:wqcstrong/boilerplate.git';
+
 export const Boilerplate_Repos = {
   'react-lite-pc': {
-    url: 'git@github.com:wqcstrong/boilerplate.git',
+    url: repo,
     branch: 'react-lite-pc'
   },
   'react-vite-pc': {
-    url: 'git@github.com:wqcstrong/boilerplate.git',
+    url: repo,
     branch: 'react-vite-pc'
   },
   'react-vite-mobile': {
-    url: 'git@github.com:wqcstrong/boilerplate.git',
+    url: repo,
     branch: 'react-vite-mobile'
+  },
+  'vanilla-vite': {
+    url: repo,
+    branch: 'vanilla-vite'
   }
 };
