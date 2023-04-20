@@ -5,7 +5,6 @@
     "isolatedModules": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "jsx": "react-jsx",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "sourceMap": true,

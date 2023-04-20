@@ -1,13 +1,10 @@
 import { defineConfig } from 'vite';
 import path from 'path';
-import react from '@vitejs/plugin-react';
-import styleImport, { AntdResolve } from 'vite-plugin-style-import';
-import svgr from 'vite-plugin-svgr';
-import antdDayjs from 'antd-dayjs-vite-plugin';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
+import ssl from '@vitejs/plugin-basic-ssl';
 
 export default ({ command, mode }) => {
-  const isProd = mode === 'production';
+  const isProd = command === 'build';
 
   return defineConfig({
     build: {
@@ -22,24 +19,6 @@ export default ({ command, mode }) => {
     resolve: {
       alias: [{ find: '@', replacement: path.join(__dirname, './src') }],
     },
-    css: {
-      preprocessorOptions: {
-        less: {
-          javascriptEnabled: true,
-          modifyVars: {
-            hack: `true; @import "${process.cwd()}/src/assets/style/variable.less";`,
-          },
-        },
-      },
-    },
-    plugins: [
-      ViteEjsPlugin(),
-      react(),
-      svgr(),
-      styleImport({
-        resolves: [AntdResolve()],
-      }),
-      antdDayjs(),
-    ],
+    plugins: [ViteEjsPlugin(), ssl()],
   });
 };

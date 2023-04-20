@@ -1,3 +1,3 @@
 module.exports = {
-  extends: require.resolve('@blucass/eslint-config-react'),
+  extends: require.resolve('@blucass/eslint-config-typescript'),
 };
