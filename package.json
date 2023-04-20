@@ -14,7 +14,7 @@
     "release:patch": "standard-version --release-as patch"
   },
   "devDependencies": {
-    "@blucass/eslint-config-react": "^1.0.3",
+    "@blucass/eslint-config-react": "latest",
     "@types/node": "^17.0.16",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
