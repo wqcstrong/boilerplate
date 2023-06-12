@@ -16,5 +16,9 @@ export const Boilerplate_Repos = {
   'vanilla-vite': {
     url: repo,
     branch: 'vanilla-vite'
+  },
+  'vue-vite': {
+    url: repo,
+    branch: 'vue-vite'
   }
 };

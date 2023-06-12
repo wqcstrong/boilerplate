@@ -59,11 +59,15 @@ async function getProjectType() {
     message: '选择项目模板',
     choices: [
       {
+        title: 'Vue3 (vite)',
+        value: 'vue-vite',
+        description: '基于 vite 构建, PC 和移动端双页面入口'
+      },
+      {
         title: 'Vanilla(vite)',
         value: 'vanilla-vite',
         description: '基于 vite 构建'
       },
-
       {
         title: 'React(cra) B端 ',
         value: 'react-lite-pc',
