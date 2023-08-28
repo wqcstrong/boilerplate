@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import react from '@vitejs/plugin-react';
-import styleImport, { AntdResolve } from 'vite-plugin-style-import';
 import svgr from 'vite-plugin-svgr';
-import antdDayjs from 'antd-dayjs-vite-plugin';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 
 export default ({ command, mode }) => {
@@ -36,10 +34,6 @@ export default ({ command, mode }) => {
       ViteEjsPlugin(),
       react(),
       svgr(),
-      styleImport({
-        resolves: [AntdResolve()],
-      }),
-      antdDayjs(),
     ],
   });
 };
