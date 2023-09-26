@@ -1,19 +1,34 @@
-import { Typography } from 'antd';
+import { Button, message, Space, Typography } from 'antd';
+import { useRequest } from 'ahooks';
+
+import { getUserInfo } from '@/apis/user';
+import { useUserInfo } from '@/store';
 
 const { Title, Paragraph, Link, Text } = Typography;
 
+const larkVanGroup = 'https://van-api.huolala.work/lala/feishu/join-van-group';
 const viteWeb = 'https://vitejs.cn/';
 const umiRequest = 'https://github.com/umijs/umi-request';
 const ahooksUseRequest = 'https://ahooks.js.org/hooks/async';
 const reactRouterUpgrade = 'https://reactrouter.com/docs/en/v6/upgrading/v5';
 
-export default function Menu1() {
+export const QuickStart = () => {
+  const updateUser = useUserInfo((state) => state.updateUser);
+  const { run: runRefreshUser } = useRequest(getUserInfo, {
+    manual: true,
+    onSuccess(res) {
+      updateUser(res.data.username);
+      message.success('刷新成功，检查右上角用户名');
+    },
+  });
+
   return (
     <Typography>
       <Title level={2}>概览</Title>
       <Paragraph>
-        <b>react-vite-pc</b> 模板基于 <Link href={viteWeb}>Vite</Link>{' '}
-        构建，Vite 是一种新的前端构建工具，能够显著提升前端开发体验。
+        <b>react-pc-on-vite</b> 模板（以下简称：react-vite）基于{' '}
+        <Link href={viteWeb}>Vite</Link> 构建，Vite
+        是一种新的前端构建工具，能够显著提升前端开发体验。
       </Paragraph>
 
       <Paragraph>
@@ -23,6 +38,7 @@ export default function Menu1() {
       <Paragraph>
         当前已经内置的配置有：
         <ul>
+          <li>集成发布系统 Van；</li>
           <li>Antd 按需加载；通过 dayjs 替换 moment 优化 Antd 包体积；</li>
           <li>支持使用 less；</li>
           <li>支持引用 svg；</li>
@@ -56,6 +72,12 @@ export default function Menu1() {
           </li>
         </ul>
       </Paragraph>
+      <Space>
+        <Text>演示：</Text>
+        <Button type="primary" onClick={runRefreshUser}>
+          刷新当前登录用户
+        </Button>
+      </Space>
 
       <Title level={4}>路由和布局</Title>
       <blockquote>
@@ -75,6 +97,11 @@ export default function Menu1() {
         <code>src/routes/config.tsx</code>
         中简单配置，就可以实现路由注册、配置侧边栏菜单、隐式路由等功能。
       </Paragraph>
+
+      <Title level={2}>技术支持</Title>
+      <Paragraph>
+        如需更多帮助，可以点击 <Link href={larkVanGroup}>这里</Link> 加入支持群
+      </Paragraph>
     </Typography>
   );
-}
+};

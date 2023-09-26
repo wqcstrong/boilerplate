@@ -1,5 +1,5 @@
 import request from './instance';
 
-export function getTodos() {
+export function getUserInfo() {
   return request.get('/todos');
 }

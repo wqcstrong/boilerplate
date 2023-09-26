@@ -9,13 +9,8 @@ export default ({ command, mode }) => {
 
   return defineConfig({
     build: {
-      target: ['chrome61', 'firefox60', 'safari14', 'edge79', 'ios14'],
+      target: ['chrome95'],
       sourcemap: isProd ? 'hidden' : true,
-    },
-    esbuild: {
-      logOverride: {
-        'this-is-undefined-in-esm': 'silent',
-      },
     },
     resolve: {
       alias: [{ find: '@', replacement: path.join(__dirname, './src') }],

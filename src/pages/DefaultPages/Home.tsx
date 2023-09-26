@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const { Paragraph, Title } = Typography;
 
-const Home = () => {
+export const Home = () => {
   return (
     <Typography>
       <Title level={3}>你好！🤪</Title>
@@ -15,5 +15,3 @@ const Home = () => {
     </Typography>
   );
 };
-
-export default Home;
