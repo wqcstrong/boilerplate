@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge, TabBar } from 'antd-mobile';
 import {
   AppOutline,
@@ -30,8 +29,6 @@ const BottomTab = () => {
     {
       key: '/message',
       title: '消息',
-      icon: (active: boolean) =>
-        active ? <MessageFill /> : <MessageOutline />,
       badge: '99+',
     },
     {

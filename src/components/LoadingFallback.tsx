@@ -1,4 +1,3 @@
-import React from 'react';
 import { DotLoading } from 'antd-mobile';
 
 export default function LoadingFallback() {
