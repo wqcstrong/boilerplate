@@ -11,17 +11,12 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx --fix ./src"
   },
   "devDependencies": {
-    "@blucass/eslint-config-typescript": "latest",
-    "@types/node": "^17.0.16",
-    "@vitejs/plugin-basic-ssl": "^1.0.1",
     "autoprefixer": "^10.4.2",
-    "eslint": "^7.23.2",
-    "less": "^4.1.2",
+    "less": "^4.2.0",
     "lint-staged": "^12.3.3",
     "prettier": "^2.5.1",
-    "typescript": "^4.6.2",
-    "vite": "^3.0.4",
-    "vite-plugin-ejs": "^1.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
@@ -51,5 +46,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
+    "eslint-config-alloy": "^5.1.2"
   }
 }
