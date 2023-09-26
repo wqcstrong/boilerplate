@@ -1,15 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import { Alert, ConfigProvider } from 'antd';
+import zhCN from 'antd/lib/locale/zh_CN';
 
-import Layout from './layouts';
-import './assets/style/initial.css';
+import 'antd/dist/reset.css';
 
-ReactDOM.render(
+import './index.css';
+
+const { ErrorBoundary } = Alert;
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Layout />
+      <ConfigProvider locale={zhCN}>
+        {/* 如果不需要 ErrorBoundary 可以去掉 */}
+        <ErrorBoundary message='Oops! Something went wrong!'>
+          <App />
+        </ErrorBoundary>
+      </ConfigProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

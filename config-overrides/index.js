@@ -1,29 +1,22 @@
-const {
-  override,
-  addLessLoader,
-  addWebpackPlugin,
-  addBabelPlugin
-} = require('customize-cra');
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
+const { override, addWebpackAlias } = require('customize-cra');
+const addLessLoader = require('customize-cra-less-loader');
+const path = require('node:path');
 
 const inProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   webpack: override(
     addLessLoader({
-      modifyVars: {
-        hack: `true; @import "${process.cwd()}/src/assets/style/variable.less";`
-      },
-      javascriptEnabled: true
-    }),
-    addBabelPlugin([
-      'import',
-      {
-        libraryName: 'antd',
-        style: true
+      lessOptions: {
+        javascriptEnabled: true,
+        modifyVars: {
+          '@primary-color': '#038fde'
+        }
       }
-    ]),
-    addWebpackPlugin(new AntdDayjsWebpackPlugin())
+    }),
+    addWebpackAlias({
+      '@': path.resolve('./src')
+    })
   ),
   devServer(configFn) {
     return (proxy, allowedHost) => {
