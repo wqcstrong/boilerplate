@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "isolatedModules": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "jsx": "react-jsx",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "baseUrl": "./",
-    "strict": true,
-    "paths": {
-      "@/*": ["src/*"]
-    },
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "useDefineForClassFields": false
-  },
-  "include": ["src/**/*"]
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
+  }
 }

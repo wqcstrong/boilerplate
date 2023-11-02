@@ -1,0 +1,8 @@
+.dockerignore
+.vscode
+
+node_modules
+dist
+logs
+server-data
+secrets

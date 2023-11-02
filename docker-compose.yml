@@ -1,0 +1,40 @@
+# 查看某个容器的日志
+# docker logs -f <id>
+
+version: '4'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: nest_db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_password
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER_FILE: /run/secrets/mysql_user
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      MYSQL_DATABASE: online_doc
+    volumes:
+      - ./server-data/mysql/data:/var/lib/mysql
+      - ./server-data/mysql/conf/my.cnf:/etc/my.cnf
+    restart: on-failure
+    secrets:
+      - mysql_user
+      - mysql_password
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest_api
+    ports:
+      - 4000:4000
+    restart: on-failure
+    depends_on:
+      - mysql
+
+secrets:
+  mysql_user:
+    file: ./secrets/mysql-user.txt
+  mysql_password:
+    file: ./secrets/mysql-password.txt

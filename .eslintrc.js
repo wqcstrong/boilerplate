@@ -1,24 +1,25 @@
-/**
- * @type {import('eslint').Linter.BaseConfig}
- */
 module.exports = {
-  extends: [
-    'alloy',
-    'alloy/react',
-    'alloy/typescript',
-    'plugin:react-hooks/recommended',
-  ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
+    sourceType: 'module',
   },
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  root: true,
+  env: {
+    node: true,
+    jest: true,
+  },
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
-    'no-undef': 'off',
-    '@typescript-eslint/consistent-type-assertions': 'off',
-    '@typescript-eslint/no-invalid-void-type': 'off',
-    '@typescript-eslint/no-inferrable-types': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    'max-nested-callbacks': ['error', 5],
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };
