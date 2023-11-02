@@ -1,24 +1,33 @@
-const repo = 'git@github.com:wqcstrong/boilerplate.git';
-
-export const Boilerplate_Repos = {
-  'react-lite-pc': {
-    url: repo,
-    branch: 'react-lite-pc'
+export const repo = 'git@github.com:wqcstrong/boilerplate.git';
+export const templates = [
+  {
+    title: 'Vue3 (vite)',
+    value: 'vue-vite',
+    description: '基于 vite 构建, PC 和移动端双页面入口'
   },
-  'react-vite-pc': {
-    url: repo,
-    branch: 'react-vite-pc'
+  {
+    title: 'Vanilla(vite)',
+    value: 'vanilla-vite',
+    description: '基于 vite 构建'
   },
-  'react-vite-mobile': {
-    url: repo,
-    branch: 'react-vite-mobile'
+  {
+    title: 'React(cra) B端 ',
+    value: 'react-lite-pc',
+    description: '基于 cra，通过 react-app-rewired 自定义配置'
   },
-  'vanilla-vite': {
-    url: repo,
-    branch: 'vanilla-vite'
+  {
+    title: 'React(vite) B端',
+    value: 'react-vite-pc',
+    description: '技术栈：Vite + React + antd + axios'
   },
-  'vue-vite': {
-    url: repo,
-    branch: 'vue-vite'
+  {
+    title: 'React(vite) C端',
+    value: 'react-vite-mobile',
+    description: '技术栈: Vite + React + antd-mobile + TailwindCSS + axios'
+  },
+  {
+    title: 'NestJS - API',
+    value: 'nestjs-api',
+    description: '技术栈: nestjs + typeorm'
   }
-};
+];

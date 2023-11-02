@@ -7,10 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "yarn build && node dist/index.js",
-    "commit": "git-cz",
-    "release:patch": "standard-version --release-as patch",
-    "release:minor": "standard-version --release-as minor",
-    "release:major": "standard-version --release-as major",
+    "commit": "git add . && git-cz",
     "prepublishOnly": "yarn build"
   },
   "files": [
@@ -45,7 +42,6 @@
     "git-cz": "^4.7.6",
     "lint-staged": "^11.0.0",
     "prettier": "^2.2.1",
-    "standard-version": "^9.3.0",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {

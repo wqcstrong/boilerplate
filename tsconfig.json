@@ -14,10 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "baseUrl": "."
   },
   "exclude": ["test"],
   "include": ["src/**/*.ts"]

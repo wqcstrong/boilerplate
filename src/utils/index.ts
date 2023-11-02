@@ -4,6 +4,7 @@ import ora from 'ora';
 import chalk from 'chalk';
 import clone from './git-clone';
 import path from 'path';
+import { repo } from '../repos';
 
 export const checkCommandInstall = (command: string) => {
   try {
@@ -28,14 +29,13 @@ function reinitGit(localPath: string) {
 }
 
 export const downloadRepos = (
-  repoObj: I.Repo,
+  branch: string,
   localPath: string,
   projectName: string
 ) => {
   const spinner = ora('Downloading...').start();
-  const { url, branch = '' } = repoObj;
   const params = {
-    url,
+    url: repo,
     branch,
     localPath
   };
